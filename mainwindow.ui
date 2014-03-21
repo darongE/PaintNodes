@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>518</width>
+    <height>382</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>20</width>
+    <height>20</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="columnCount">
+        <number>2</number>
+       </property>
+       <column>
+        <property name="text">
+         <string>Название</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Свойства</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QFrame" name="frame">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="UScene3D" name="widget" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>518</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>Основной</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+   <addaction name="actionAddNode"/>
+   <addaction name="actionDeleteNode"/>
+   <addaction name="actionClear"/>
+  </widget>
+  <action name="actionAddNode">
+   <property name="icon">
+    <iconset resource="paintNodes.qrc">
+     <normaloff>:/add</normaloff>:/add</iconset>
+   </property>
+   <property name="text">
+    <string>Добавить вершину</string>
+   </property>
+  </action>
+  <action name="actionDeleteNode">
+   <property name="icon">
+    <iconset resource="paintNodes.qrc">
+     <normaloff>:/delete</normaloff>:/delete</iconset>
+   </property>
+   <property name="text">
+    <string>Удалить вершину</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="paintNodes.qrc">
+     <normaloff>:/clear</normaloff>:/clear</iconset>
+   </property>
+   <property name="text">
+    <string>Очистить граф</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>UScene3D</class>
+   <extends>QWidget</extends>
+   <header>UScene3D.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="paintNodes.qrc"/>
+ </resources>
+ <connections/>
+</ui>
